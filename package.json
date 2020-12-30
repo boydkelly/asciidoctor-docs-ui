@@ -60,5 +60,9 @@
     "typeface-roboto-mono": "^1.1",
     "vinyl-buffer": "~1.0",
     "vinyl-fs": "~3.0"
+  },
+  "dependencies": {
+    "typeface-cousine": "^1.1.13",
+    "typeface-noto-sans": "^1.1.13"
   }
 }
