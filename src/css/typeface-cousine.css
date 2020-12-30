@@ -1,0 +1,21 @@
+@font-face {
+  font-family: "Cousine";
+  font-style: normal;
+  font-weight: 400;
+  src:
+    local("Cousine"),
+    local("Cousine-Regular"),
+    url(~typeface-cousine/files/cousine-latin-400.woff2) format("woff2"),
+    url(~typeface-cousine/files/cousine-latin-400.woff) format("woff");
+}
+
+@font-face {
+  font-family: "Cousine";
+  font-style: normal;
+  font-weight: 700;
+  src:
+    local("Cousine Medium"),
+    local("Cousine-Medium"),
+    url(~typeface-cousine/files/cousine-latin-700.woff2) format("woff2"),
+    url(~typeface-cousine/files/cousine-latin-700.woff) format("woff");
+}
