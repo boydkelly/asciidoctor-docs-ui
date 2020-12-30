@@ -7,6 +7,7 @@
   --color-smoke-70: #f0f0f0;
   --color-smoke-90: #e1e1e1;
   --color-gray-10: #c1c1c1;
+  --color-gray-15: #bababa;
   --color-gray-30: #8e8e8e;
   --color-gray-50: #808080;
   --color-gray-70: #5d5d5d;
@@ -29,8 +30,10 @@
   --color-accent: #e2e4dd;
   --color-set-panel: var(--color-accent);
   --table-set-stripe-background: var(--color-smoke-10);
-  /* fonts */
+  /* utils */
   --rem-base: 18; /* used to compute rem value from desired pixel value (e.g., calc(18 / var(--rem-base) * 1rem) = 18px) */
+  --viewport-height: calc(100 * var(--vh, 1vh)); /* used to represent a tunable value of 100vh */
+  /* fonts */
   --body-font-size: 1.0625em; /* 17px */
   --body-font-size--desktop: 1.125em; /* 18px */
   --body-font-size--print: 0.9375em; /* 15px */
@@ -40,11 +43,6 @@
   --body-font-weight-bold: 500;
   --monospace-font-family: "Cousine", monospace;
   --monospace-font-weight-bold: 500;
-  /* base */
-  --body-background: var(--color-white);
-  --panel-background: var(--color-set-panel);
-  --panel-border-color: var(--color-smoke-90);
-  --scrollbar-thumb-color: var(--color-gray-10);
   /* navbar */
   --navbar-background: var(--color-primary);
   --navbar-font-color: var(--color-white);
@@ -53,6 +51,7 @@
   --navbar-button-border-color: var(--panel-border-color);
   --navbar-button-font-color: var(--body-font-color);
   --navbar-menu-border-color: var(--panel-border-color);
+  --navbar-menu-box-shadow: rgba(160, 160, 160, 0.15);
   --navbar-menu-background: var(--color-white);
   --navbar-menu-font-color: var(--body-font-color);
   --navbar-menu_hover-background: var(--color-smoke-50);
@@ -60,7 +59,7 @@
   --nav-background: var(--panel-background);
   --nav-border-color: var(--color-gray-10);
   --nav-line-height: 1.35;
-  --nav-heading-font-color: var(--color-jet-30);
+  --nav-heading-font-color: var(--color-accent);
   --nav-muted-color: var(--color-gray-70);
   --nav-panel-divider-color: var(--color-smoke-90);
   --nav-secondary-background: var(--color-smoke-70);
@@ -71,15 +70,10 @@
   --toolbar-muted-color: var(--color-gray-30);
   --page-version-menu-background: var(--color-smoke-70);
   --page-version-missing-font-color: var(--color-gray-30);
-  /* toc */
-  --toc-font-color: var(--nav-muted-color);
-  --toc-heading-font-color: var(--doc-font-color);
-  --toc-border-color: var(--panel-border-color);
-  --toc-line-height: 1.2;
-  /* admonitions */
-  --caution-color: #a0439c;
+  /* admonitions (see https://coolors.co/802392-e40046-2d7dd2-43b929-ff7700) */
+  --caution-color: #802392;
   --caution-on-color: var(--color-white);
-  --important-color: #d32f2f;
+  --important-color: var(--color-red);
   --important-on-color: var(--color-white);
   --note-color: #217ee7;
   --note-on-color: var(--color-white);
@@ -98,8 +92,14 @@
   --heading-font-weight: normal;
   --alt-heading-font-weight: var(--body-font-weight-bold);
   --section-divider-color: var(--panel-border-color);
-  --link-font-color: #1565c0;
-  --link_hover-font-color: #104d92;
+  /*
+  --link-font-color: #048ba8; blue munsell
+  --link-font-color: #2e86ab; blue NCS
+  --link-font-color: #2c7fa2; blue NCS (with increased contrast)
+  --link-font-color: #218380; celadon green
+  */
+  --link-font-color: #2c7fa2;
+  --link_hover-filter: brightness(75%) saturate(150%);
   --link_unresolved-font-color: var(--important-color);
   --abstract-background: var(--color-smoke-70);
   --abstract-font-color: var(--color-jet-20);
@@ -125,31 +125,14 @@
   --table-border-color: var(--panel-border-color);
   --table-stripe-background: var(--table-set-stripe-background);
   --table-footer-background: linear-gradient(to bottom, var(--color-smoke-70) 0%, var(--color-white) 100%);
+  /* toc */
+  --toc-font-color: var(--nav-muted-color);
+  --toc-heading-font-color: var(--doc-font-color);
+  --toc-border-color: var(--panel-border-color);
+  --toc-line-height: 1.2;
   /* footer */
   --footer-line-height: var(--doc-line-height);
   --footer-background: var(--color-secondary);
   --footer-font-color: var(--color-smoke-30);
   --footer-link-font-color: var(--color-set-panel);
-  /* dimensions and positioning */
-  --navbar-height: calc(63 / var(--rem-base) * 1rem);
-  --toolbar-height: calc(45 / var(--rem-base) * 1rem);
-  --drawer-height: var(--toolbar-height);
-  --body-top: var(--navbar-height);
-  --body-min-height: calc(100vh - var(--body-top));
-  --nav-height: calc(var(--body-min-height) - var(--toolbar-height));
-  --nav-height--desktop: var(--body-min-height);
-  --nav-panel-height: calc(var(--nav-height) - var(--drawer-height));
-  --nav-panel-height--desktop: calc(var(--nav-height--desktop) - var(--drawer-height));
-  --nav-width: calc(270 / var(--rem-base) * 1rem);
-  --toc-top: calc(var(--body-top) + var(--toolbar-height));
-  --toc-height: calc(100vh - var(--toc-top) - 2.5rem);
-  --toc-width: calc(162 / var(--rem-base) * 1rem);
-  --toc-width--widescreen: calc(216 / var(--rem-base) * 1rem);
-  --doc-max-width: calc(720 / var(--rem-base) * 1rem);
-  --doc-max-width--desktop: calc(828 / var(--rem-base) * 1rem);
-  /* stacking */
-  --z-index-nav: 1;
-  --z-index-toolbar: 2;
-  --z-index-page-version-menu: 3;
-  --z-index-navbar: 4;
 }
