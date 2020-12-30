@@ -2,6 +2,7 @@ image: node:10.14.2-stretch
 stages: [deploy]
 bundle-stable:
   stage: deploy
+  only: julakan-main
   script:
   - npm install --quiet --no-progress
   - node_modules/.bin/gulp bundle
