@@ -20,7 +20,7 @@ lint:
 bundle-stable:
   stage: deploy
   only:
-  - master@antora/antora-ui-default
+  - julakn-main@boydkelly/julakan-docs-ui
   cache: *pull_cache
   script:
   - *npm_install
@@ -39,11 +39,11 @@ bundle-dev:
   artifacts:
     expire_in: 1 day # unless marked as keep from job page
     paths:
-    - build/ui-bundle.zip
+    - public/ui-bundle.zip
 pages:
   stage: deploy
   only:
-  - master@antora/antora-ui-default
+  - julakan-main@boydkelly/julakan-docs-ui
   cache: *pull_cache
   script:
   - *npm_install
@@ -53,3 +53,7 @@ pages:
   artifacts:
     paths:
     - public
+trigger_build:
+  stage: deploy
+  script:
+    - "curl -X POST -F token=7dc04d6e26af2933756aa6fa63a687 -F ref=master https://gitlab.com/api/v4/projects/18171487/trigger/pipeline"
