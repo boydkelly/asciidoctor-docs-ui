@@ -28,32 +28,7 @@ bundle-stable:
   artifacts:
     paths:
     - build/ui-bundle.zip
-bundle-dev:
-  stage: deploy
-  except:
-  - master
-  cache: *pull_cache
-  script:
-  - *npm_install
-  - node_modules/.bin/gulp bundle
-  artifacts:
-    expire_in: 1 day # unless marked as keep from job page
-    paths:
-    - public/ui-bundle.zip
-pages:
-  stage: deploy
-  only:
-  - julakan-main@boydkelly/julakan-docs-ui
-  cache: *pull_cache
-  script:
-  - *npm_install
-  - node_modules/.bin/gulp preview:build
-  # FIXME figure out a way to avoid copying these files to preview site
-  - rm -rf public/_/{helpers,layouts,partials}
-  artifacts:
-    paths:
-    - public
 trigger_build:
   stage: deploy
   script:
-    - "curl -X POST -F token=7dc04d6e26af2933756aa6fa63a687 -F ref=master https://gitlab.com/api/v4/projects/18171487/trigger/pipeline"
+    - "curl -X POST -F token=7dc04d6e26af2933756aa6fa63a687 -F ref=main https://gitlab.com/api/v4/projects/18171487/trigger/pipeline"
