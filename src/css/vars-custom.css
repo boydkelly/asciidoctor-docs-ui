@@ -154,7 +154,7 @@
   --toc-line-height: 1.2;
   /* footer */
   --footer-line-height: var(--doc-line-height);
-  --footer-background: var(--color-secondary;
+  --footer-background: var(--color-secondary);
   --footer-font-color: var(--color-gray-15);
   --footer-link-font-color: var(--color-white);
   /* dimensions and positioning */
