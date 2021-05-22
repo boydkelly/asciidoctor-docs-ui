@@ -26,6 +26,7 @@
   --color-yellow: #e8c547;
   --color-primary: var(--color-blue);
   --color-secondary: var(--color-yellow);
+  --color-brand-primary: var(--color-yellow);
   --color-accent: #cdd1c4;
   --color-accent: #e2e4dd;
   --color-set-panel: var(--color-accent);
@@ -59,7 +60,7 @@
   --nav-background: var(--panel-background);
   --nav-border-color: var(--color-gray-10);
   --nav-line-height: 1.35;
-  --nav-heading-font-color: var(--color-accent);
+  /* --nav-heading-font-color: var(--color-accent); */
   --nav-muted-color: var(--color-gray-70);
   --nav-panel-divider-color: var(--color-smoke-90);
   --nav-secondary-background: var(--color-smoke-70);
