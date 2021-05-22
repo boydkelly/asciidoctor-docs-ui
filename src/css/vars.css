@@ -46,9 +46,11 @@
   --navbar-button-border-color: var(--panel-border-color);
   --navbar-button-font-color: var(--body-font-color);
   --navbar-menu-border-color: var(--panel-border-color);
-  --navbar-menu-box-shadow: rgba(160, 160, 160, 0.15);
+  --navbar-menu-border-radius: 0 0 0.25rem 0.25rem;
+  --navbar-menu-box-shadow: 0 2px 4px rgba(160, 160, 160, 0.15);
   --navbar-menu-background: var(--color-white);
   --navbar-menu-font-color: var(--body-font-color);
+  --navbar-menu-icon-filter: invert(10%); /* matches --color-jet-80 */
   --navbar-menu_hover-background: var(--color-smoke-50);
   /* nav */
   --nav-background: var(--panel-background);
@@ -56,12 +58,15 @@
   --nav-line-height: 1.35;
   --nav-heading-font-color: var(--color-brand-primary);
   --nav-muted-color: var(--color-gray-70);
+  --nav-muted-icon-filter: invert(36.5%); /* matches --color-gray-70 */
   --nav-panel-divider-color: var(--color-smoke-90);
   --nav-secondary-background: var(--color-smoke-70);
   /* toolbar */
   --toolbar-background: var(--panel-background);
   --toolbar-border-color: var(--panel-border-color);
-  --toolbar-font-color: var(--color-gray-70);
+  --toolbar-font-color: var(--nav-muted-color);
+  --toolbar-icon-filter: var(--nav-muted-icon-filter);
+  --toolbar-primary-icon-filter: var(--navbar-menu-icon-filter);
   --toolbar-muted-color: var(--color-gray-30);
   --page-version-menu-background: var(--color-smoke-70);
   --page-version-missing-font-color: var(--color-gray-30);
@@ -82,6 +87,7 @@
   --doc-font-color: #24292e;
   */
   --doc-font-color: #24262b;
+  --doc-icon-filter: invert(14.5%); /* matches #242424 */
   --doc-font-size: inherit;
   --doc-font-size--desktop: calc(17 / var(--rem-base) * 1rem);
   --doc-line-height: 1.6;
@@ -98,8 +104,9 @@
   --link-font-color: #218380; celadon green
   */
   --link-font-color: #2c7fa2;
-  --link_hover-filter: brightness(75%) saturate(150%);
+  --link_hover-font-color: #08658c; /* brightness(75%) saturate(150%) */
   --link_unresolved-font-color: var(--important-color);
+  --link_unresolved-hover-font-color: #ec003a;
   --abstract-background: var(--color-smoke-70);
   --abstract-font-color: var(--color-jet-20);
   --abstract-border-color: var(--panel-border-color);
@@ -116,6 +123,7 @@
   --pre-background: var(--panel-background);
   --pre-border-color: var(--panel-border-color);
   --pre-annotation-font-color: var(--color-gray-50);
+  --pre-annotation-icon-filter: invert(50.2%); /* matches --color-gray-50 */
   --quote-background: var(--panel-background);
   --quote-border-color: var(--color-gray-70);
   --quote-font-color: var(--color-gray-70);
@@ -156,5 +164,6 @@
   --z-index-nav: 2;
   --z-index-toolbar: 3;
   --z-index-page-version-menu: 4;
-  --z-index-navbar: 5;
+  --z-index-footer: 5;
+  --z-index-navbar: 6;
 }

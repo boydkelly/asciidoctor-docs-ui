@@ -116,7 +116,12 @@ h1.page + aside.toc.embedded {
 }
 
 .doc a:hover {
-  filter: var(--link_hover-filter);
+  color: var(--link_hover-font-color);
+}
+
+.doc a:hover,
+.doc a:hover > * {
+  text-decoration: underline solid currentColor;
 }
 
 .doc a.bare {
@@ -127,10 +132,14 @@ h1.page + aside.toc.embedded {
   color: var(--link_unresolved-font-color);
 }
 
+.doc a.unresolved:hover {
+  color: var(--link_unresolved-hover-font-color);
+}
+
 .doc i.fa {
   display: inline-block;
   background: no-repeat center / 1em 1em;
-  filter: invert(20%);
+  filter: var(--doc-icon-filter);
   hyphens: none;
   font-style: normal;
   height: 1em;
@@ -739,17 +748,22 @@ h1.page + aside.toc.embedded {
   height: 1em;
 }
 
-.source-toolbox .copy-button * {
+.doc .source-toolbox .copy-icon {
   flex: none;
-}
-
-.source-toolbox .copy-button svg {
-  fill: currentColor;
   width: inherit;
   height: inherit;
 }
 
-.source-toolbox .copy-toast {
+.doc .source-toolbox img.copy-icon {
+  filter: var(--pre-annotation-icon-filter);
+}
+
+.doc .source-toolbox svg.copy-icon {
+  fill: currentColor;
+}
+
+.doc .source-toolbox .copy-toast {
+  flex: none;
   position: relative;
   display: inline-flex;
   justify-content: center;
@@ -763,7 +777,7 @@ h1.page + aside.toc.embedded {
   transition: opacity 0.5s ease 0.75s;
 }
 
-.source-toolbox .copy-toast::after {
+.doc .source-toolbox .copy-toast::after {
   content: "";
   position: absolute;
   top: 0;
@@ -775,7 +789,7 @@ h1.page + aside.toc.embedded {
   transform-origin: left;
 }
 
-.source-toolbox .copy-button.clicked .copy-toast {
+.doc .source-toolbox .copy-button.clicked .copy-toast {
   opacity: 1;
   transition: none;
 }
@@ -918,7 +932,7 @@ h1.page + aside.toc.embedded {
   margin: 0 -0.25em;
 }
 
-.doc .nowrap {
+.doc :not(pre).nowrap {
   white-space: nowrap;
 }
 

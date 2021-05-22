@@ -1,4 +1,4 @@
-@media screen and (max-width: 769.5px) {
+@media screen and (max-width: 768.5px) {
   html.is-clipped--nav {
     overflow-y: hidden;
   }
@@ -33,8 +33,8 @@
     font-size: calc(15.5 / var(--rem-base) * 1rem);
     flex: none;
     position: static;
-    top: 0;
     visibility: visible;
+    height: var(--nav-height--desktop);
   }
 }
 
@@ -57,10 +57,11 @@
 
 @media screen and (min-width: 1024px) {
   .nav {
-    top: var(--navbar-height);
+    top: var(--navbar-height); /* fixed position is relative to viewport */
     box-shadow: none;
-    position: sticky;
-    height: var(--nav-height--desktop);
+    position: fixed;
+    width: inherit;
+    height: inherit;
   }
 }
 
@@ -72,7 +73,12 @@
 
 .nav-panel-menu {
   overflow-y: scroll;
+  overscroll-behavior: none;
   height: var(--nav-panel-menu-height);
+}
+
+.nav-panel-menu.is-loading {
+  visibility: hidden;
 }
 
 .nav-panel-menu:not(.is-active) .nav-menu {
@@ -225,7 +231,7 @@
 .nav-panel-explore:not(:first-child) .context .version::after {
   content: "";
   background: url(../img/octicons-16.svg#view-chevron-down) no-repeat center right -0.15em / 1em 1em;
-  filter: invert(36.5%); /* NOTE should match --color-gray-70 */
+  filter: var(--nav-muted-icon-filter);
   padding-right: 1.25em;
   margin-right: -0.25rem;
 }
