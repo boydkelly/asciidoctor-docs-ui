@@ -18,7 +18,7 @@
   --color-jet-70: #222;
   --color-jet-80: #191919;
   --color-black: #000;
-/* custom colours */
+  /* custom colours */
   --color-orange: #ff6f00;
   --color-blue: #4285f4;
   --color-blue: #5c80bc;
@@ -182,8 +182,3 @@
   --z-index-footer: 5;
   --z-index-navbar: 6;
 }
-
-
-
-
-
