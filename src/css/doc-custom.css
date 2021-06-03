@@ -18,19 +18,19 @@ summary {
 
 details p {
   cursor: auto;
-  background: #eee;
+  background: inherit;
   border-radius: 4px;
   right: 0;
 }
 
 details[open] p {
-  animation: animateDown 0.2s linear forwards;
+  animation: animateDown 0.4s linear forwards;
 }
 
 @keyframes animateDown {
   0% {
     opacity: 0;
-    transform: translateY(-15px);
+    transform: translateY(0);
   }
 
   100% {
