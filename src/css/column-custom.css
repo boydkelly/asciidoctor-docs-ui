@@ -1,0 +1,118 @@
+/* Columns layout */
+.columns .content {
+  display: flex;
+}
+
+.columns.wrap .content {
+  flex-wrap: wrap;
+}
+
+.columns.is-vcentered .content {
+  align-items: center;
+}
+
+.columns .content > .column {
+  display: block;
+  flex-basis: 0;
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+
+.columns .content > .column > * {
+  padding: .75rem;
+}
+
+/* See #353 */
+.columns.wrap .content > .column {
+  flex-basis: auto;
+}
+
+.columns .content > .column.is-full {
+  flex: none;
+  width: 100%;
+}
+
+.columns .content > .column.is-four-fifths {
+  flex: none;
+  width: 80%;
+}
+
+.columns .content > .column.is-three-quarters {
+  flex: none;
+  width: 75%;
+}
+
+.columns .content > .column.is-two-thirds {
+  flex: none;
+  width: 66.6666%;
+}
+
+.columns .content > .column.is-three-fifths {
+  flex: none;
+  width: 60%;
+}
+
+.columns .content > .column.is-half {
+  flex: none;
+  width: 50%;
+}
+
+.columns .content > .column.is-two-fifths {
+  flex: none;
+  width: 40%;
+}
+
+.columns .content > .column.is-one-third {
+  flex: none;
+  width: 33.3333%;
+}
+
+.columns .content > .column.is-one-quarter {
+  flex: none;
+  width: 25%;
+}
+
+.columns .content > .column.is-one-fifth {
+  flex: none;
+  width: 20%;
+}
+
+.columns .content > .column.has-text-left {
+  text-align: left;
+}
+
+.columns .content > .column.has-text-justified {
+  text-align: justify;
+}
+
+.columns .content > .column.has-text-right {
+  text-align: right;
+}
+
+.columns .content > .column.has-text-left {
+  text-align: left;
+}
+
+.columns .content > .column.has-text-justified {
+  text-align: justify;
+}
+
+.columns .content > .column.has-text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left !important
+}
+
+.text-right {
+  text-align: right !important
+}
+
+.text-center {
+  text-align: center !important
+}
+
+.text-justify {
+  text-align: justify !important
+}
