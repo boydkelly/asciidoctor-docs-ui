@@ -18,7 +18,7 @@
   ],
   "devDependencies": {
     "@octokit/rest": "~18.0",
-    "asciidoctor.js": "1.5.9",
+    "@asciidoctor/core": "~2.2",
     "autoprefixer": "~10.0",
     "browser-pack-flat": "~3.4",
     "browserify": "~17.0",
@@ -60,9 +60,5 @@
     "typeface-roboto-mono": "^1.1",
     "vinyl-buffer": "~1.0",
     "vinyl-fs": "~3.0"
-  },
-  "dependencies": {
-    "typeface-cousine": "^1.1.13",
-    "typeface-noto-sans": "^1.1.13"
   }
 }
