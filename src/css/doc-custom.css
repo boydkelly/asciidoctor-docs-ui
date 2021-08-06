@@ -6,24 +6,24 @@
   padding: 0.75em 1em;
 }
 
-.doc .hdlist1 {
+.hdlist1 {
   font-weight: bold;
   font-style: italic;
 }
 
-.doc summary {
+.xdoc summary {
   list-style: inherit;
   border: none;
 }
 
-.doc details p {
+.xdoc details p {
   cursor: auto;
   background: inherit;
   border-radius: 4px;
   right: 0;
 }
 
-.doc details[open] p {
+.xdoc details[open] p {
   animation: animateDown 0.4s linear forwards;
 }
 
@@ -43,7 +43,7 @@
   (min-device-width: 768px) and (max-device-width: 1024px) {
 
   /* Force table to not be like tables anymore */
-  .doc table,
+  table,
   thead,
   tbody,
   th,
@@ -51,19 +51,19 @@
     display: block;
   }
 
-  .doc tr {
+  tr {
     display: flex;
     flex-flow: row wrap;
   }
 
   /* Hide table headers (but not display: none;, for accessibility) */
-  .doc thead tr {
+  thead tr {
     position: absolute;
     top: -9999px;
     left: -9999px;
   }
 
-  .doc td {
+  td {
     /* Behave  like a "row" */
     border: none;
     border-bottom: 1px solid #eee;
@@ -72,7 +72,7 @@
     flex-basis: 1 1 0;
   }
 
-  .doc td::before {
+  td::before {
     /* Now like a table header */
     position: absolute;
     /* Top/left values mimic padding */
@@ -83,7 +83,7 @@
     white-space: nowrap;
   }
 
-  .doc td:nth-of-type(1) {
+  td:nth-of-type(1) {
     flex-basis: max-content;
   }
   /*
