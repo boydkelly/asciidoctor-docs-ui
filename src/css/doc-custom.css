@@ -1,4 +1,4 @@
-#preamble .abstract blockquote {
+.doc #preamble .abstract blockquote {
   background: var(--quote-background);
   border-left: 5px solid var(--abstract-border-color);
   color: var(--abstract-font-color);
