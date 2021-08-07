@@ -6,7 +6,7 @@ bundle-stable:
   - julakan-main@boydkelly/julakan-docs-ui
   script:
   - npm install --quiet --no-progress
-  - node_modules/.bin/gulp bundle
+  - SOURCEMAPS=true node_modules/.bin/gulp bundle
   artifacts:
     paths:
     - build/ui-bundle.zip
