@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang={{#with (or page.attributes.lang page.lang)}} {{{this}}}{{/with}}">
   <head>
 {{> head defaultPageTitle='Untitled'}}
   </head>
