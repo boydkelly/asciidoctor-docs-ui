@@ -1,0 +1,61 @@
+#TableOfContents ul {
+flex-flow: column nowrap;
+}
+
+#TableOfContents {
+    padding-top: 27px;
+}
+
+#TableOfContents > ul > li > ul {
+    padding-left: 6px;
+}
+
+#TableOfContents > ul > li {
+    margin-bottom: 16px;
+}
+
+#TableOfContents > ul > li > a:first-of-type {
+    margin-bottom: 4px;
+    font-size: 16px;
+}
+
+#TableOfContents a {
+    position: relative;
+    display: block;
+    padding: 2px;
+    font-size: 14px;
+    line-height: 16px;
+    color: var(--navbar-background);
+    text-decoration: none;
+}
+
+#TableOfContents a::before {
+    display: block;
+    content: "";
+    position: absolute;
+    top: -1px;
+    bottom: -1px;
+    left: -2px;
+    right: -2px;
+    background-color: var(--accent);
+    z-index: -1;
+    transform: scale(0);
+    transition: transform 0.2s ease;
+    transform-origin: left bottom;
+    border-radius: 6px;
+}
+
+#TableOfContents a:hover::before {
+    display: block;
+    transform: scale(1);
+}
+
+#TableOfContents a:active {
+    color: var(--navbar-color);
+}
+
+#TableOfContents a:active::before {
+    display: block;
+    background-color: var(--navbar-background);
+}
+
