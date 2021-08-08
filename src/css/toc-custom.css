@@ -1,61 +1,60 @@
 body.article.dico ul {
-flex-flow: column nowrap;
+  flex-flow: column nowrap;
 }
 
 body.article.dico {
-    padding-top: 27px;
+  padding-top: 27px;
 }
 
 body.article.dico > ul > li > ul {
-    padding-left: 6px;
+  padding-left: 6px;
 }
 
 body.article.dico > ul > li {
-    margin-bottom: 16px;
+  margin-bottom: 16px;
 }
 
 body.article.dico > ul > li > a:first-of-type {
-    margin-bottom: 4px;
-    font-size: 16px;
+  margin-bottom: 4px;
+  font-size: 16px;
 }
 
 body.article.dico a {
-    position: relative;
-    display: block;
-    padding: 2px;
-    font-size: 14px;
-    line-height: 16px;
-    color: var(--navbar-background);
-    text-decoration: none;
+  position: relative;
+  display: block;
+  padding: 2px;
+  font-size: 14px;
+  line-height: 16px;
+  color: var(--navbar-background);
+  text-decoration: none;
 }
 
 body.article.dico a::before {
-    display: block;
-    content: "";
-    position: absolute;
-    top: -1px;
-    bottom: -1px;
-    left: -2px;
-    right: -2px;
-    background-color: var(--accent);
-    z-index: -1;
-    transform: scale(0);
-    transition: transform 0.2s ease;
-    transform-origin: left bottom;
-    border-radius: 6px;
+  display: block;
+  content: "";
+  position: absolute;
+  top: -1px;
+  bottom: -1px;
+  left: -2px;
+  right: -2px;
+  background-color: var(--accent);
+  z-index: -1;
+  transform: scale(0);
+  transition: transform 0.2s ease;
+  transform-origin: left bottom;
+  border-radius: 6px;
 }
 
 body.article.dico a:hover::before {
-    display: block;
-    transform: scale(1);
+  display: block;
+  transform: scale(1);
 }
 
 body.article.dico a:active {
-    color: var(--navbar-color);
+  color: var(--navbar-color);
 }
 
 body.article.dico a:active::before {
-    display: block;
-    background-color: var(--navbar-background);
+  display: block;
+  background-color: var(--navbar-background);
 }
-
