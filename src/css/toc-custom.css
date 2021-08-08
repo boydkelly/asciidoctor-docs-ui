@@ -19,7 +19,7 @@
 
 @media screen and (min-width: 1024px) {
   .toc .toc-menu h3 {
-    font-size: calc(25 / var(--rem-base) * 1rem);
+    font-size: calc(20 / var(--rem-base) * 1rem);
   }
 
   .toc .toc-menu ul {
@@ -28,30 +28,29 @@
 }
 
 .dico .toc .toc-menu li {
-  display: inline-block;
-  text-align: center;
+  display: block;
   margin: 0;
 }
 
 .dico .toc .toc-menu li[data-level="1"] a {
-  padding-left: 1.25rem;
+  padding-left: 1rem;
 }
 
 .dico .toc .toc-menu li[data-level="2"] {
+  text-align: center;
   width: 2rem;
-  height: 2rem;
 }
 
 .dico .toc .toc-menu a {
-  display: block;
   color: inherit;
   border-left: 2px solid var(--toc-border-color);
-  padding: 0.5rem 0 0.5rem 0.5rem 0.5rem;
+  padding: 1rem 1rem 1rem 1rem;
   text-decoration: none;
 }
 
 .dico .toc .toc-menu a:hover {
   color: var(--doc-font-color);
+  background-color: var(--color-panel-background);
   -webkit-text-stroke-width: 0.01em;
 }
 
@@ -62,17 +61,12 @@
 }
 
 .dico .toc .toc-menu a:focus {
-  background: var(--color-panel-background);
+  background-color: var(--color-panel-background);
 }
 
-.dico .toc .toc-menu .is-hidden-toc {
-  display: none !important;
-}
-
-.dico .toc .toc-menu li > a::before {
+.dico .toc .toc-menu li a::before {
   display: block;
   content: "";
-  position: absolute;
   top: -1px;
   bottom: -1px;
   left: -2px;
@@ -84,17 +78,17 @@
   border-radius: 6px;
 }
 
-.dico .toc .toc-menu li > a:hover::before {
+.dico .toc .toc-menu li a:hover::before {
   display: block;
   background-color: var(--color-secondary);
   transform: scale(1);
 }
 
-.dico .toc .toc-menu li > a:active {
+.dico .toc .toc-menu li a:active {
   color: var(--color-primary);
 }
 
-.dico .toc .toc-menu li > a:active::before {
+.dico .toc .toc-menu li a:active::before {
   display: block;
   background-color: var(--color-navbar-background);
 }
