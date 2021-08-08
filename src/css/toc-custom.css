@@ -1,35 +1,75 @@
-body.article.dico ul {
-  flex-flow: column nowrap;
+.dico .toc .toc-menu ul {
+  display: flex;
+  flex-direction: column;
+  font-size: calc(20 / var(--rem-base) * 1rem);
+  line-height: auto;
+  max-height: auto;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  overscroll-behavior: none;
+  scrollbar-width: none;
 }
 
-body.article.dico {
-  padding-top: 27px;
+.dico .toc .toc-menu ul::-webkit-scrollbar {
+  width: 0;
+  height: 0;
 }
 
-body.article.dico > ul > li > ul {
-  padding-left: 6px;
+@media screen and (min-width: 1024px) {
+  .toc .toc-menu h3 {
+    font-size: calc(25 / var(--rem-base) * 1rem);
+  }
+
+  .toc .toc-menu ul {
+    font-size: calc(15.5 / var(--rem-base) * 1rem);
+  }
 }
 
-body.article.dico > ul > li {
-  margin-bottom: 16px;
+.dico .toc .toc-menu li {
+  display: inline-block;
+  text-align: center;
+  margin: 0;
 }
 
-body.article.dico > ul > li > a:first-of-type {
-  margin-bottom: 4px;
-  font-size: 16px;
+.dico .toc .toc-menu li[data-level="1"] a {
+  padding-left: 1.25rem;
 }
 
-body.article.dico a {
-  position: relative;
+.dico .toc .toc-menu li[data-level="2"] {
+  width: 2rem;
+  height: 2rem;
+}
+
+.dico .toc .toc-menu a {
   display: block;
-  padding: 2px;
-  font-size: 14px;
-  line-height: 16px;
-  color: var(--navbar-background);
+  color: inherit;
+  border-left: 2px solid var(--toc-border-color);
+  padding: 0.5rem 0 0.5rem 0.5rem 0.5rem;
   text-decoration: none;
 }
 
-body.article.dico a::before {
+.dico .toc .toc-menu a:hover {
+  color: var(--doc-font-color);
+  -webkit-text-stroke-width: 0.01em;
+}
+
+.dico .toc .toc-menu a.is-active {
+  border-left-color: var(--color-brand-primary);
+  color: var(--doc-font-color);
+  -webkit-text-stroke-width: 0.01em;
+}
+
+.dico .toc .toc-menu a:focus {
+  background: var(--color-panel-background);
+}
+
+.dico .toc .toc-menu .is-hidden-toc {
+  display: none !important;
+}
+
+.dico .toc .toc-menu li > a::before {
   display: block;
   content: "";
   position: absolute;
@@ -37,24 +77,24 @@ body.article.dico a::before {
   bottom: -1px;
   left: -2px;
   right: -2px;
-  background-color: var(--accent);
+  background-color: var(--color-secondary);
   z-index: -1;
   transform: scale(0);
   transition: transform 0.2s ease;
-  transform-origin: left bottom;
   border-radius: 6px;
 }
 
-body.article.dico a:hover::before {
+.dico .toc .toc-menu li > a:hover::before {
   display: block;
+  background-color: var(--color-secondary);
   transform: scale(1);
 }
 
-body.article.dico a:active {
-  color: var(--navbar-color);
+.dico .toc .toc-menu li > a:active {
+  color: var(--color-primary);
 }
 
-body.article.dico a:active::before {
+.dico .toc .toc-menu li > a:active::before {
   display: block;
-  background-color: var(--navbar-background);
+  background-color: var(--color-navbar-background);
 }
