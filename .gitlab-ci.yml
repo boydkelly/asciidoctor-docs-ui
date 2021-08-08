@@ -14,4 +14,3 @@ trigger_build:
   stage: deploy
   script:
     - "curl -X POST -F token=62e9b9b81d2efb0b9ef285be686769 -F ref=main https://gitlab.com/api/v4/projects/19007974/trigger/pipeline"
-
