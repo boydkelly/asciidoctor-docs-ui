@@ -112,3 +112,24 @@
   display: block;
   background-color: var(--color-navbar-background);
 }
+
+.dico ul.sectlevel1 {
+  list-style: none;
+  padding: 0 0 0 0;
+}
+
+.dico ul.sectlevel1 li:first-child {
+  display:none;
+}
+
+.dico ul.sectlevel1>li>a {
+  display:none;
+}
+
+.dico ul.sectlevel2 {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  padding: 0 0 0 0;
+}
+
