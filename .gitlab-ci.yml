@@ -5,8 +5,10 @@ bundle-stable:
   only:
   - julakan-main
   script:
-  - npm install --quiet --no-progress
-  - node_modules/.bin/gulp bundle
+  - npm install gulp-cli
+    #- npm install --quiet --no-progress
+  - npm install 
+  - node_modules/.bin/gulp bundle:pack
   artifacts:
     paths:
     - build/ui-bundle.zip
