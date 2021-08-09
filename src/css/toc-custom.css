@@ -14,6 +14,7 @@
 
 @media screen and (max-width: 768px) {
   .dico .toc .toc-menu ul {
+    display: flex;
     flex-flow: row wrap;
   }
 }
