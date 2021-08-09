@@ -17,8 +17,8 @@
     "defaults"
   ],
   "devDependencies": {
-    "@asciidoctor/core": "~2.2",
     "@octokit/rest": "~18.0",
+    "@asciidoctor/core": "~2.2",
     "autoprefixer": "~10.0",
     "browser-pack-flat": "~3.4",
     "browserify": "~17.0",
