@@ -8,7 +8,7 @@ bundle-stable:
   - npm install gulp-cli
     #- npm install --quiet --no-progress
   - npm install 
-  - node_modules/.bin/gulp bundle
+  - SOURCEMAPS=true node_modules/.bin/gulp bundle
   artifacts:
     paths:
     - build/ui-bundle.zip
