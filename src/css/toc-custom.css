@@ -119,11 +119,11 @@
 }
 
 .dico ul.sectlevel1 li:first-child {
-  display:none;
+  display: none;
 }
 
-.dico ul.sectlevel1>li>a {
-  display:none;
+.dico ul.sectlevel1 > li > a {
+  display: none;
 }
 
 .dico ul.sectlevel2 {
@@ -132,4 +132,3 @@
   list-style: none;
   padding: 0 0 0 0;
 }
-
